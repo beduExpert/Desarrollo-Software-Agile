@@ -1,23 +1,31 @@
-1. Crea un nuevo dashboard genérico
+```pipeline {
+    agent any
 
-```+ -> Dashboard```
+    stages {
+        stage('Docker') {
+            steps {
+                echo 'Connecting with dockerserver-01'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Este stage sirve para compilar el código que fue obtenido del repositorio de Git'
+                echo 'Su ejecución se dio gracias a que pasó correctamente el stage de Análisis'
+            }
+        }
+        stage('DevOps Config') {
+            steps {
+                echo 'Este stage sirve para conectar mediante variables de entorno, a otras herramientas de apoyo para asegurar la calidad del código'
+                script{
+                    env.USER_NAME = "Usuario"
+                    env.USER_ID = "devops"
+                }
+                echo "Querido ${env.USER_NAME}"
+                echo "Tu contraseña es: ${env.USER_ID}"
+            }
+        }
+    }
+}
+```
 
-![image](https://user-images.githubusercontent.com/59855822/159540105-accb9cc7-8cd6-41b5-a1d5-7ed811a0b7fe.png)
-
-```Add a new panel```
-
-![image](https://user-images.githubusercontent.com/59855822/159540188-8ff4512a-27e0-4cf1-95c7-a427c0457811.png)
-
-```Configuración: *Query Random Walk, *Fill y *las últimas 6 horas```
-
-![image](https://user-images.githubusercontent.com/59855822/159540441-cf2ca389-a8d7-4d14-bfbe-3e7a2b49fda5.png)
-
-
-2. Nombralo "My first Dashboard"
-
-```Dale nombre en 'Title' y luego el botón 'Apply' ```
-
-![image](https://user-images.githubusercontent.com/59855822/159540665-31174b53-39ca-4d18-a312-25f50ad3f860.png)
-
-
-¡FELICIDADES! HAS CREADO TU PRIMER DASHBOARD.
+![image](https://user-images.githubusercontent.com/59855822/157606045-c7303c62-aefa-4905-9dc5-52857c300fd9.png)

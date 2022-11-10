@@ -1,64 +1,99 @@
-## Sesión 4: Arquitectura de microservicios
 
-<div style="text-align: justify;">
+# Sesión 04 - Fundamentos de DevSecOps 🕹
 
-### 1. Objetivos 🎯
+🎯 **Introduccion:**
 
-- Reconocer el IDE Android Studio con el que desarrollan aplicaciones móviles.
-- Conocer la estructura de un proyecto android y todos los archivos generados por el IDE
+DevOps es una combinación de las palabras entre "development" (desarrollo) y "operations" (operaciones) representa un conjunto de ideas y prácticas que van más allá de ambos conceptos, ya sea que estén juntos o separados. DevOps incluye sistemas de seguridad, maneras de trabajar en colaboración, análisis de datos, entre otras características. 
 
-### 2. Contenido 📘
+Con este conjunto de herramientas obtenemos la automatización y el diseño de las plataformas para generar mayor valor empresarial y capacidad de respuesta, mediante la prestación ágil de servicios de alta calidad. 
 
-En este work abordaremos ejemplos de patrones y soluciones en las nubes de Azure, Google Cloud y AWS. Tendremos dos retos a realizar.
+Todo ello es posible gracias a la prestación rápida y constante de servicios de TI. 
 
----
-### Ejemplo 1. Modelos de diseño de microservicios con Azure.
+Para DevOps, se necesita vincular las aplicaciones heredadas con las aplicaciones creadas en la nube y las infraestructuras más nuevas.
+ 
+DevOps describe los enfoques para agilizar una solicitud de mejora o una corrección de errores) pasa del desarrollo a la implementación, en un entorno de producción en que puede generar valor para el usuario.
 
-El objetivo de los microservicios es aumentar la velocidad de las versiones de la aplicación mediante la descomposición de la aplicación en servicios autónomos pequeños que se pueden implementar de forma independiente. Una arquitectura de microservicios también conlleva algunos desafíos. Los modelos de diseño que se muestran aquí pueden ayudar a mitigar estos desafíos.
-
-* [Ejemplo 1.](./Ejemplo-01/README.md)
+![Alt text](https://raw.githubusercontent.com/beduExpert/DevOps-Fundamentals-2021/main/Sesion-01/assets/Sesion-01-01.png?raw=true "DevOps")
 
 ---
 
-### Ejemplo 2. Microservicios con App Engine.
-Usa el entorno estándar de App Engine para proporcionar balanceo de cargas integrado, ajuste de escala automático, registro y supervisión completamente integrados, y redundancia regional.
-* [Ejemplo 2.](./Ejemplo-02/README.md)
+## ¿Qué es DevOps?
+
+
+DevOps acelera la transición de una iniciativa de desarrollo a la implementación. En esencia, DevOps se basa en la automatización de las tareas operativas de rutina y la estandarización de los entornos en todo el ciclo de vida de una aplicación. Los contenedores pueden brindar entornos estandarizados, pero se necesita una plataforma para gestionarlos que ofrezca soporte y automatización integrados para cualquier tipo de infraestructura
+
+![Alt text](https://raw.githubusercontent.com/beduExpert/DevOps-Fundamentals-2021/main/Sesion-01/assets/Sesion-01-02.png?raw=true "DevOps")
 
 ---
 
-### Ejemplo 3. Arquitectura de Microservicios con AWS Lambdas.
-Amazon nos provee una serie de servicios interesantes para construir arquitecturas basadas en microservicios: Lambda, EC2 con VPC y Fargate (para trabajar con contenedores y Kubernetes), comúnmente denominado ECS (Amazon Elastic Container Service).
-* [Ejemplo 3.](./Ejemplo-03/README.md)
+## Aplicar el modelo de DevOps como cultura y metodología de trabajo en equipo.
+
+La cultura organizacional se basa en las características de las personas y la forma en la que se comunican y relacionan entre sí. Factores como la transparencia, la confianza, la responsabilidad compartida, las creencias, la capacidad de aprendizaje, la mejora continua o la experimentación ya que el modelo que se trabaja requiere enfoques de los equipos de desarrollo y operaciones que estos se comuniquen con frecuencia y aborden su trabajo con empatía hacia sus compañeros de equipo.
+
+También es necesario contar con capacidad de ajuste y tener flexibilidad a la hora de preparar los sistemas. Con DevOps, es posible brindar una mayor potencia a aquellos que más la necesitan, gracias al autoservicio y la automatización, los desarrolladores, que generalmente realizan codificaciones en un entorno de desarrollo estándar, trabajan en estrecha colaboración con los equipos de operaciones de TI para agilizar el diseño, las pruebas y el lanzamiento de los sistemas de software, sin comprometer la confiabilidad.
+ 
+Por supuesto, esto implica cambios más frecuentes en el código y el uso más dinámico de la infraestructura. Las estrategias tradicionales de gestión no logran satisfacer este aumento de la demanda. Necesitará hacer algunos cambios para obtener una ventaja competitiva.
+
+![Alt text](https://raw.githubusercontent.com/beduExpert/DevOps-Fundamentals-2021/main/Sesion-01/assets/Sesion-01-03.png?raw=true "DevOps")
+
 ---
 
-### 3. Retos:
-Dirígete a cada una de las ligas de los retos
-* [Reto 1.](./Reto1/README.md)
-* [Reto 2.](./Reto2/README.md)
+## ¿Qué se conoce como Agile?
+
+Agile es mucho más que una metodología para el desarrollo de proyectos que precisan de rapidez y flexibilidad, es una filosofía que supone una forma distinta de trabajar y de organizarse. De tal forma que cada proyecto se 'trocea' en pequeñas partes que tienen que completarse y entregarse en pocas semanas.
+
+Dos conceptos básicos dentro de las metodologías Agile son la iteración y el prototipo. Cuando una organización Agile crea un producto, lo hace desarrollando prototipos, modelos simples e imperfectos que se tienen que ir mejorando y completando en las sucesivas iteraciones. 
+
+Cada iteración es un tiempo de desarrollo corto que permite generar un prototipo sencillo. Esta forma de trabajar facilita una mejora continua y generar valor a lo largo de todas las fases del proyecto, ya que cualquiera de los prototipos producidos es una versión simplificada del producto final que podría, potencialmente, lanzarse al mercado, generando valor para la empresa.
+
+Esta forma de trabajar crea una relación de confianza con el cliente ya que, aunque los prototipos son un producto incompleto, el cliente puede ver, tocar y valorar en cualquier momento la evolución del producto deseado.
+
+En caso de que un imprevisto fuerce la interrupción del proceso, el cliente siempre tendrá el último prototipo creado por el equipo de desarrollo, que, aun siendo una versión simplificada, podrá ser lanzado al mercado. De esta forma, siempre habrá un retorno en la inversión y nunca se perderá el trabajo realizado hasta ese momento (como ocurre en las metodologías más tradicionales de desarrollo de productos).
+
+
+![Alt text](https://raw.githubusercontent.com/beduExpert/DevOps-Fundamentals-2021/main/Sesion-01/assets/Sesion-01-04.png?raw=true "DevOps")
 
 ---
 
-### 4. Contenido recomendado
-[Identificación de los límites de los microservicios - Azure Architecture Center](https://docs.microsoft.com/es-es/azure/architecture/microservices/model/microservice-boundaries): Obtenga información sobre cómo empezar a partir de un modelo de dominio cuidadosamente diseñado para determinar el tamaño adecuado de un microservicio.
+## Cultura
 
-[Análisis de dominios para microservicios - Azure Architecture Center](https://docs.microsoft.com/es-es/azure/architecture/microservices/model/domain-analysis): En este artículo se ofrece un enfoque basado en dominios para el diseño de microservicios, de tal manera que cada servicio siga el principio general de hacer solo una cosa.
-
-[Uso de un diseño basado en dominios táctico para diseñar microservicios - Azure Architecture Center](https://docs.microsoft.com/es-es/azure/architecture/microservices/model/tactical-ddd): Use el diseño basado en dominios en una arquitectura de microservicios para identificar los patrones de entidades y agregados, que permiten determinar los límites naturales de los servicios.
-
-[Diseño de una arquitectura de microservicios - Azure Architecture Center](https://docs.microsoft.com/es-es/azure/architecture/microservices/design/): Aprenda a diseñar y compilar una arquitectura de microservicios en Azure siguiendo una implementación de referencia que ilustra los procedimientos recomendados.
-
-[Comunicación entre servicios en los microservicios - Azure Architecture Center](https://docs.microsoft.com/es-es/azure/architecture/microservices/design/interservice-communication): Conozca las concesiones entre la mensajería asincrónica y las API sincrónicas en relación con la comunicación entre microservicios, así como algunos desafíos de comunicación.
-
-[Patrón de capa anticorrupción - Cloud Design Patterns](https://docs.microsoft.com/es-es/azure/architecture/patterns/anti-corruption-layer): Examine el patrón de capa anticorrupción. Implementa una capa de fachada o de adaptador entre una aplicación moderna y un sistema heredado.
-
-[Consideraciones de datos para los microservicios - Azure Architecture Center](https://docs.microsoft.com/es-es/azure/architecture/microservices/design/data-considerations): Obtenga información sobre cómo administrar datos en una arquitectura de microservicios. La integridad y la coherencia de los datos suponen importantes desafíos en relación con los microservicios.
-
-[Patrón Backends for Frontends - Cloud Design Patterns](https://docs.microsoft.com/es-es/azure/architecture/patterns/backends-for-frontends): Explore el patrón Back-ends para front-ends, que crea servicios de back-end independientes para que los consuman aplicaciones o interfaces de front-end específicas.
-
-### 5. Postwork 📝
-
-Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
-
-- [**`POSTWORK SESIÓN 4`**](./Postwork/)
+Un obstáculo en las organizaciones es la adopción de una cultura de trabajo en equipo que agilice el trabajo en cuanto a tiempo, calidad, gestión y automatización de entregables, aplicado en este curso a las tecnologías de información, la cultura para los DevOps, básicamente, trata de ser más ágil, entregando productos a mayor velocidad y de mayor calidad. Los equipos estarán más alineados, menos estancos y participarán en más etapas del ciclo de vida del producto.
 
 
+![Alt text](https://raw.githubusercontent.com/beduExpert/DevOps-Fundamentals-2021/main/Sesion-01/assets/Sesion-01-05.png?raw=true "DevOps")
+
+---
+
+## Metodología
+
+DevOps es una metodología para creación de software, el cual se basa en la integración entre desarrolladores software y administradores de sistemas. DevOps permite fabricar software más rápidamente, con mayor calidad, menor coste y una altísima frecuencia de releases.
+
+![Alt text](https://raw.githubusercontent.com/beduExpert/DevOps-Fundamentals-2021/main/Sesion-01/assets/Sesion-01-06.png?raw=true "DevOps")
+
+---
+
+## Ecosistema de herramientas, productos y servicios.
+
+DevOps es una filosofía centrada en herramientas, según Gartner... Un ecosistema vibrante de productos DevOps principalmente de código abierto está disponible para automatizar y optimizar aspectos de la secuencia de entrega de software. 
+
+Algunas compañías venden cadenas de herramientas DevOps de extremo a extremo.
+
+![Alt text](https://raw.githubusercontent.com/beduExpert/DevOps-Fundamentals-2021/main/Sesion-01/assets/Sesion-01-07.png?raw=true "DevOps")
+
+---
+
+
+## Proyectando la seguridad dentro de DevOps
+
+Ya que conocemos la cultura y el acceso de DevOps podemos agregar un nuevo enfoque: la seguridad, consiguiendo así un nuevo paradigma: DevSecOps. Con este nuevo agregado podemos considerar algunos puntos relevantes:
+
+1. La seguridad debe ser un proceso continuio que se encuentre desde el diseño de nuestros proyectos, no se trata de una carácteristica o "feature" que podamos agregar después.
+
+2. La seguridad debe ser un auto-servicio, es decir, los equipos trabajando en DevOps deben tener la disponibilidad de las herramientas de seguridad dentro del equipo, los controles de seguridad deben funcionar cada vez que hacemos un cambio.
+
+3. El uso de infraestructura cómo codigo y herramientas de configuración automatica nos permitirá reducir la posibilidad de brechas de seguridad y errores humanos. 
+
+
+![Alt text](https://learning.oreilly.com/api/v2/epubs/urn:orm:book:9781491971413/files/assets/dosc_0001.png "DevSecOps")
+
+Cómo podemos observar en la imagen anterior, dentro del esquema de DevOps la seguridad debe ser una figura central; en el modelo de cascada la seguridad se hace hasta que se entrega el equipo de infraestructura, para ese momento es demasiado tarde en el ciclo de desarrollo para que sea útil.

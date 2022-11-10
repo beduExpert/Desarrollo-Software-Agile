@@ -1,67 +1,192 @@
-# Ejemplo 1 - Comprobando comunicaciónes entre dos contenedores.
+#  Creación/Clonación de un repositorio.
 
-## Objetivos 🎯
+## Crear un repositorio nuevo de git:
 
-* Buscar herramientas de diagnostico de red.
-* Probar comunicaciones entre contenedores.
 
-## Desarrollo 📝
 
-Es común afrontar problemas de comunicación, donde buscamos que un contenedor se enlace con otro o comprobar el estado de tu aplicación para monitoreo.
 
-No siempre tenemos a la mano herramientas para poder probar, pero en el dockerfile del contenedor podemos instalar las herramientas que necesitemos.
+</br>
 
-Por ejemplo, el contenedor de ejemplo que viene en la solución del postwork, trae `curl`, una herramienta para realizar peticiones http:
+~~~
+git init
+~~~
+</br>
 
-Abriendo una terminal interactiva al contenedor de books:
+## Clonar un repositorio existente:
 
-```
-PS C:\Users\emile> docker exec -it -u root myapi-books /bin/bash
-root@6c4629015aa0:/usr/src/books#
-```
-Comprobando la ubicación de `curl` con whereis:
-```
-root@6c4629015aa0:/usr/src/books# whereis curl
-curl: /usr/bin/curl /usr/share/man/man1/curl.1.gz
-```
-Probando una peticion al contenedor de Jenkins via su IP interna del bridge de Docker.
-```
-root@6c4629015aa0:/usr/src/books# curl -v http://172.17.0.3:8080
-*   Trying 172.17.0.3:8080...
-* Connected to 172.17.0.3 (172.17.0.3) port 8080 (#0)
-> GET / HTTP/1.1
-> Host: 172.17.0.3:8080
-> User-Agent: curl/7.74.0
-> Accept: */*
->
-* Mark bundle as not supporting multiuse
-< HTTP/1.1 403 Forbidden
-< Date: Wed, 16 Mar 2022 07:21:29 GMT
-< X-Content-Type-Options: nosniff
-< Set-Cookie: JSESSIONID.74acd03b=node0grk3m9u8x1l21vepo7apv43re17.node0; Path=/; HttpOnly
-< Expires: Thu, 01 Jan 1970 00:00:00 GMT
-< Content-Type: text/html;charset=utf-8
-< X-Hudson: 1.395
-< X-Jenkins: 2.335
-< X-Jenkins-Session: 1f00f901
-< Content-Length: 541
-< Server: Jetty(9.4.45.v20220203)
-<
-<html><head><meta http-equiv='refresh' content='1;url=/login?from=%2F'/><script>window.location.replace('/login?from=%2F');</script></head><body style='background-color:white; color:white;'>
-...
-```
-Dependiendo de qué tipo de comunicación necesitaremos instalar algún programa cliente para intentar verificar conectividad con otro contenedor. Por ejemplo, si necesitamos confirmar comunicación con mysql desde el contenedor del microservicio myapi-books, podemos usar el propio cliente de python para comprobar el enlace. El siguiente código mandaría una excepción en caso de problemas de comunicación, al conectar bien simplemente termina en `exit code = 0`:
-```
-#!/usr/bin/env python3
-import os, sys
-import mysql.connector as sql
+</br>
 
-if __name__ == '__main__':
-    cnx = sql.connect(
-            host       =os.environ['MYSQL_IP'],
-            port       =os.environ['MYSQL_PORT'],
-            user       =os.environ['MYSQL_USER'],
-            password   =os.environ['MYSQL_PASSWORD'],
-            )
-    sys.exit(0)
-```
+**`Ejemplo:`**
+
+~~~
+git clone repository<direcccion>
+
+git clone https://github.com/beduExpert/DevOps-Fundamentals-2021.git
+~~~
+
+</br>
+
+**`Nota: `** Desde nuestro repositorio en github.com podemos obtener la dirección para poder ejecutar nuestra sentencia git clone. 
+
+![Alt text](../Ejemplo-01/assets/s2-e01-01.png?raw=true "DevOps")
+
+
+</br>
+
+---
+
+## Flujo de Trabajo:
+
+</br>
+
+Tu repositorio local esta compuesto por tres "árboles" administrados por git. El primero es tu ***Directorio*** de trabajo que contiene los archivos, el segundo es el Index que actua como una zona intermedia, y el último es el ***HEAD*** que apunta al último ***commit*** realizado.
+
+![Alt text](../Ejemplo-01/assets/s2-e01-02.png?raw=true "DevOps")
+
+---
+
+</br>
+
+## Agregar y dar Commit a nuestros cambios.
+
+</br>
+
+Para registrar cambios (agregarlos al ***Index*** ) usando:
+
+</br>
+
+~~~
+git add <filename>
+git add .
+~~~ 
+</br> 
+Este es el primer paso en el flujo de trabajo. Para realizar un  commit a estos cambios se utiliza:
+
+</br>
+
+~~~
+git commit -m "Agrega un comentario relativo a tu cambio"
+~~~
+</br>
+
+
+Ahora el archivo está incluído en el ***HEAD***, pero aún no en tu repositorio remoto.
+
+</br>
+
+---
+## Subir tus cambios
+
+</br>
+
+Tus cambios están ahora en el ***HEAD*** de tu copia local. Para enviar estos cambios a tu repositorio remoto ejecuta:
+
+</br>
+
+~~~
+git push origin master
+~~~
+</br>
+
+Reemplaza  **`master`** o  **`main`**  por la rama a la que quieres enviar tus cambios.
+
+</br>
+
+Si no has clonado un repositorio ya existente y quieres conectar tu repositorio local a un repositorio remoto, utiliza:
+
+</br>
+
+~~~
+git remote add origin <servidor>
+~~~
+</br>
+
+
+Ahora podrás subir tus cambios al repositorio remoto seleccionado.
+
+</br>
+
+---
+## Creación de ramas
+
+</br>
+
+Las ramas son utilizadas para desarrollar funcionalidades aisladas unas de otras. La rama master/main es la rama **"por defecto"** cuando creas un repositorio. Crea nuevas ramas durante el desarrollo y podrás fusionar el nuevo código a la rama principal.
+
+</br>
+
+![Alt text](..//Ejemplo-01/assets/s2-e01-03.png?raw=true "DevOps")
+
+</br>
+
+Crea una nueva rama llamada ***mi/rama*** y cámbiate a ella usando:
+
+</br>
+
+~~~
+git checkout -b mi/rama
+~~~
+</br>
+
+
+Regresa a la rama principal:
+
+</br>
+
+~~~
+git checkout master
+~~~
+</br>
+
+Eliminar nuestra rama:
+
+</br>
+
+~~~
+git branch -d mi/rama
+~~~
+</br>
+
+**`Nota:`** Una rama nueva no estará disponible para los demás, deberás subir (***push***) la rama a tu repositorio remoto.
+
+</br>
+
+~~~
+git push origin mi/rama
+~~~
+</br>
+
+---
+## Actualizar y Fusionar
+
+
+</br>
+Para actualizar tu repositorio local al commit más nuevo, ejecuta:
+
+</br>
+
+~~~
+git pull
+~~~
+</br>
+
+En tu directorio de trabajo para bajar y fusionar los cambios remotos. Para fusionar otra rama a tu rama activa (por ejemplo ***master***), utiliza:
+
+</br>
+
+~~~
+git merge master
+~~~
+</br>
+
+En ambos casos git intentará fusionar automáticamente los cambios. Después de modificarlos, necesitas marcarlos como fusionados con:
+
+</br>
+
+~~~
+git add miArchivo.txt
+~~~
+</br>
+
+---
+**`NOS VEMOS EN EL RETO 01`**

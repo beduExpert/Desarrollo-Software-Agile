@@ -4,7 +4,6 @@ from flask import Response, request, g
 import mysql.connector as sql
 import sys
 import json
-import psutil
 
 app = Flask(__name__)
 
@@ -86,15 +85,3 @@ def login():
                 mimetype='application/json'
                 )
             return response
-
-@app.route("/metrics", methods=['GET'])
-def metrics():
-    l1, l2, l3 = psutil.getloadavg()
-    CPU_use = (l3/os.cpu_count()) * 100
-    process = psutil.Process(os.getpid())
-    response = app.response_class(
-                response=f"accounts_cpu {CPU_use}\naccounts_memory {process.memory_info().rss}",
-                status=200,
-                mimetype='text/plain'
-                )
-    return response

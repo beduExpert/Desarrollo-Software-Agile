@@ -1,14 +1,41 @@
-# Reto 1 - Crear un usuario en Jenkins.
+## `RETO 1`
 
-## Objetivos 🎯
 
-* Crea un usuario para ti
-* Aplica una contraseña que te sea familar
 
-## Desarrollo 📝
 
-Utilizar el usuario admin y la contraseña inicial no siempre es lo ideal. En la mayoría de los casos querrás crear usuarios para dar accesos a diferentes desarrolladores y/o administradores.
+</br>
 
->Crea un usuario para ti, con una contraseña que te sea familar.
 
-[Ver solución](./solucion.md)
+![Alt text](../Reto-01/assets/git.png?raw=true "DevOps")
+
+
+</br> 
+
+
+**`Responde las siguientes preguntas `**
+
+
+</br>
+
+
+
+***1.Crear un repositorio nuevo de git.***
+
+</br>
+
+***2.Realiza un Clon de un repositorio  que ya existe.***
+
+</br>
+
+***3. Crea un archivo nuevo dentro del repositorio.***
+
+</br>
+
+***4. realiza el COMMIT junto con un comentario.***
+
+</br>
+
+***5. Empuja tus cambios a la rama principal.***
+
+</br>
+

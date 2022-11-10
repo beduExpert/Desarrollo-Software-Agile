@@ -1,20 +1,19 @@
-# Reto 1 - Crea tu propio código Groovy
+# Reto 1 - Obtén el uso de disco del proveedor de AWS.
 
-## Objetivo
+## Objetivo 🎯
 
-* Comprensión de código Groovy
-* Comprensión de orden de stages
+* Evaluar el uso en disco de un proveedor mayor.
 
-## Desarrollo
+## Desarrollo 📝
 
-Crea un pipeline llamado "devops-fundamentals" en el que puedas escribir un código en groovy con las siguientes características:
+* Crea una nueva carpeta para proyecto de **tf**: `mkdir aws-tf`.
+* Cambia tu carpeta de trabajo a la nueva carpeta: `cd aws-tf`.
+* Crea un archivo `main.tf` con el proveedor de AWS.
+* Inicializa Terraform: `terraform init`.
+* Ejecuta el comando para obtener el uso en disco:
+    * Windows cmd: `dir /s .terraform`
+    * MacOS, GitBash y Linux: `du -shc .terraform`
 
-* Que sea capaz de conectarse a cualquier nodo
-* Debe contener 3 stages (Docker, Build y DevOps Config)
-* Los 3 stages deben tener un echo que muestre en consola para qué sirve cada uno.
-* El stage DevOps Config debe nombrar y asignar variables de usuario tu nombre y contraseña "devops"
-* El stage DevOps Config debe mostrar en consola tu usuario y contraseña
+Comparte tus resultados con el instructor.
 
-
-## Resultado
-> 💡 [Propuesta solución](./psolv.md).
+> 💡 [Solución](./resp.md).

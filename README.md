@@ -19,11 +19,11 @@ La capacidad de migrar habilidades de negocios de manera continua se ha converti
 
 ## :bookmark_tabs: Sesiones
 
-- [`Sesión 01:` Introducción al módulo de DevOps Fundamentals](./Sesion-01)
-- [`Sesión 02:` Flujos de DevOps y manejo de código](./Sesion-02)
-- [`Sesión 03:` Infraestructura como código](./Sesion-03)
-- [`Sesión 04:` Microservicios con contenedores](./Sesion-04)
-- [`Sesión 05:` Integración y entrega continua](./Sesion-05)
-- [`Sesión 06:` CI/CD con Jenkins / testing](./Sesion-06)
-- [`Sesión 07:` Gestión, mantenibilidad y monitoreo](./Sesion-07)
-- [`Sesión 08:` DevOps en la práctica](./Sesion-08)
+- Sesión 01: Agilidad
+- Sesión 02: Fundamentos de Scrum
+- [`Sesión 03:` Niveles de software testing](./Sesion-03)
+- [`Sesión 04:` Fundamentos de DevSecOps](./Sesion-04)
+- [`Sesión 05:` Flujos de DevSecOps y manejo de código](./Sesion-05)
+- [`Sesión 06:` Operaciones de Infraestructura como código (ansible, terraform y packer](./Sesion-06)
+- [`Sesión 07:` Jenkins como herramienta básica](./Sesion-07)
+- [`Sesión 08:` CI/CD con Jenkins / testing](./Sesion-08)

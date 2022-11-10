@@ -1,21 +1,44 @@
-# Reto 2 - Configura variables de entorno globales.
+## `RETO 2` ⚙️
 
-## Objetivo 🎯
-
-* Registrar una variable de entorno global.
-* Utiliza una variable de entorno global en un projecto.
-
-## Desarrollo 📝
-
-Cuando que queremos reutilizar funcionalidad, podemos crear unidades funcionales parametrizadas, en términos de Jenkins variables de entorno globales, variables de entorno injectadas al projecto y projectos parametrizados.
-
-Otras veces es por que necesitamos un valor de la salida de un programa (ej. Terraform) para ingresarlo en nuestro Jenkins pipeline.
-
-Cualquiera que sea tu motivo, utilizar variables de entorno globales es la forma más simple de pasar valores a un projecto.
-
-💡 Si no conoces sobre variables de entorno en linuxm, consulta [esta página](https://www.hostinger.es/tutoriales/variables-de-entorno-linux-como-leerlas-y-configurarlas-vps).
+</br>
 
 
->Crea un projecto que utilice una variable de entorno global.
+![Alt text](../Reto-02/assets/gitf1.png?raw=true "DevOps")
 
-[Ver solución](./solucion.md)
+</br> 
+
+## 🎯 Descripcion:
+#### **` En este reto debemos utilizar GitFlow, te sugerimos repasar los apuntes del Work y el ejemplo 2 📝`**
+
+
+
+</br>
+
+***1. Menciona los pasos para instalar Git Flow dependiendo tu plataforma***
+
+</br>
+
+***2. Inicia un repositorio (git init)***
+
+
+</br>
+
+***3. Inicia git flow***
+
+</br>
+
+***4. Crea una Rama de fusión***
+
+</br>
+
+***5. Finaliza la Rama de fusión creada***
+
+</br>
+
+***6. Publica la Rama de fusión creada***
+
+</br>
+
+***7. Finalizar la rama, logrando NO obtener como resultado: (Tagging failed)***
+
+</br>

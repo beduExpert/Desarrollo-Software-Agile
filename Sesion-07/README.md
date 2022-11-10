@@ -1,19 +1,18 @@
-## Sesión 7: Gestión, mantenibilidad y monitoreo 🤖
+## Sesión 6: CI/CD con Jenkins y Groovy 🤖
 
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart: 
 
-- Instalación y configuración de herramientas de monitoreo y mantenibilidad.
-- Implementar pruebas de endpoints con Postman.
-- Establecer colecciones de Postman para pruebas de servicios.
+- Mostrar cómo se usa Jenkins para orquestar la creación de una aplicación Java simple con Maven.
+- Integración de repositorio dentro de un flujo CI/CD
 
 ### 2. Contenido :blue_book:
 
-Con la implementación continua, toda la automatización en la cadena de herramientas de DevOps mueve el código a producción tan pronto como pasa todas sus pruebas. Pero la organización no puede simplemente confiar en una caja negra que implementa código automáticamente, esperando que funcione. Ahí es donde entran en juego los sistemas de monitorización.
+Se presenta la simulación de un caso en el que el desarrollador de Java que usa Maven y es nuevo en los conceptos de CI/CD, o si está familiarizado con estos conceptos pero no sabe cómo implementar la creación de su aplicación usando Jenkins, requiere que los cambios que realice sean fluidos y no deba preocuparse por que su código funcione en cualquier equipo.
 
-Los sistemas de monitoreo implementados correctamente brindan información relevante, lo que ayuda a las empresas a tener una visión clara de cada parte de la pila de aplicaciones, gracias al código impulsado por API escrito por desarrolladores. Además, muchos sistemas de monitorización se benefician de los enlaces de código en la propia lógica de la aplicación.
+La aplicación Java simple (que obtendrá de un repositorio de muestra en GitHub) genera la cadena "¡Hola mundo!" y se acompaña de un par de pruebas unitarias para comprobar que la aplicación principal funciona como se esperaba. Los resultados de estas pruebas se guardan en una carpeta local que simularemos como nuestro Deploy.
 
 ---
 
@@ -21,7 +20,7 @@ Los sistemas de monitoreo implementados correctamente brindan información relev
 
 #### <ins>Tema 1</ins>
 
-Tener un sistema de monitoreo integrado en el ciclo de vida de DevOps permite a las organizaciones rastrear mejor los indicadores clave de rendimiento del negocio y monitorear las métricas comerciales en producción.
+Se detalla un escenario en el que el equipo de desarrollo y el equipo de operaciones no pueden comunicarse entre ellos, demostrando el porqué surge y la importancia del flujo del equipo DevSecOps.
 
 - [**`EJEMPLO 1`**](./Ejemplo-01)
 
@@ -31,7 +30,7 @@ Tener un sistema de monitoreo integrado en el ciclo de vida de DevOps permite a 
 
 #### <ins>Tema 2</ins>
 
-Una vez que el proyecto está creado, la estructura o forma en la que se organiza es de suma importancia. No sólo nos ayuda a mantener nuestro código organizado, sino que también es importante para el funcionamiento de nuestra nueva app.
+Una vez que se haya comprendido una problemática cotidiana en el desarrollo de TI, hay que indagar ahora en el CI/CD, cuál es la estructura de un flujo ideal, los stages que debe tener, así como un reto verdadero reto de crear tu propio pipeline con un plugin que obtenga el código de Github.
 
 - [**`EJEMPLO 2`**](./Ejemplo-02)
 - [**`RETO 1`**](./Reto-01)
@@ -41,9 +40,14 @@ Una vez que el proyecto está creado, la estructura o forma en la que se organiz
 
 #### <ins>Tema 3</ins>
 
-Ahora que tenemos mayor conocimiento de nuestro proyecto, vamos a configurar un emulador de algún dispositivo móvil para poder correr nuestra aplicación! :iphone:. Es decir, vamos a correr un dispositivo móvil virtual en nuestra computadora para simular la funcionalidad de nuestra app.
+Ahora que podemos definir por nuestra cuenta los jobs, debemos definir una parte importante para agilizar los cambios del desarrollador, que es automatizar al grado en el que al hacer un cambio en Github, este sea reconocido por nuestro job y se ejecute automáticamente. 
 
 <img src="images/chaomi.png" align="right" height="110"> 
+
+#### <ins>Tema 4</ins>
+
+Llegar a este punto hace de tí una persona dedicada y te has demostrado que puedes lograr nuevos retos. Eso significa que puedes ampliar el panorama del flujo de integración. Es importante conocer qué herramientas se pueden agregar dentro de nuestros jobs para reforzar la integridad del código de nuestro equipo, reducir bugs, errores y que el ambiente en general sea seguro.
+
 
 ### 3. Postwork :memo:
 

@@ -1,33 +1,108 @@
-# Ejemplo 3. Arquitectura de Microservicios con AWS Lambdas
+# Ejemplo 03
 
-## Objetivos 🎯
+## Descargar una imagen de Docker Hub y crear la imagen de Docker
 
-* Analizar bloque a bloque el diagrama de arquitectura en AWS con Lambdas.
 
-## Desarrollo 📝
+En esta actividad descargarás una imagen(Ubuntu) de Docker Hub y crearás una imagen Imagen Docker propia con algunos ajustes.
 
-En este artículo me centraré en explicar el funcionamiento de Lambda a través de un ejemplo concreto y cómo nos podría ayudar a migrar aplicaciones monolíticas en sendas plataformas en la nube basadas en arquitecturas de microservicios.
+1.-  Tener instalado Docker en tu local, para validar ejecuta en el siguiente comando en tu terminal:  
 
-Un poco de teoría (que siempre ayuda)
 
-Lambda se basa en un concepto de computación en la nube denominado Serverless. ¿qué significa esto?
+`docker --version`  
 
-Básicamente Serverless es sin servidor. El serverless computing o la arquitectura serverless es un modelo en la nube que permite a los usuarios crear y ejecutar aplicaciones y procesos sin entrar en contacto con el servidor. Por lo tanto, a pesar de su denominación, estos entornos en la nube también cuentan con servidores, con la diferencia de que es el proveedor (Amazon en este caso) el que se encarga de suministrarlo, gestionarlo y escalarlo. Serverless es parte de lo que se conoce como [Plataformas como Servicios (PaaS)](https://azure.microsoft.com/es-es/overview/what-is-paas/).
+2.- Deberás ver algo parecido:
 
-La ventaja de este tipo de arquitectura en la nube es evidente, nos permite centrarnos en el desarrollo del producto y la ejecución del software, más que en la infraestructura capaz de soportar este desarrollo. Podemos ponerle más atención a la lógica de negocios de nuestra aplicación, sin embargo, desde el mismo código debemos agregar instrucciones adicionales como las funciones sin estado y todas aquellas instrucciones acerca de cómo debe reaccionar un programa a determinados eventos. Debido precisamente al papel esencial que juegan las funciones, hay proveedores que ofrecen sus servicios serverless bajo el nombre “Function as a Service (FaaS)” y acá es donde entra Lambda de Amazon AWS.
+<pre><code>docker --version
+Docker version 20.10.10, build b485636
+</code></pre>
 
-    Los proveedores de serverless computing no solo son los responsables de que los recursos de servidor necesarios estén siempre disponibles, sino también de garantizar el mayor nivel de seguridad y alta disponibilidad posible. Por norma general, estos servicios suelen facturarse según el modelo de pago por uso o Pay per Use, de manera que los clientes solo tienen que pagar por los servicios de los que de hecho han disfrutado.
+2.- Ahora, podemos revisar el siguiente link, donde se encuentra la descripción de la imagen Ubuntu, es la imagen docker oficial.
 
-    HTTPS://AWS.AMAZON.COM/ES/SERVERLESS/
 
-<img src="../assets/aws-architecture-diagram-lambdas.jpg"  style="background-color: white">
+https://hub.docker.com/_/ubuntu
 
-<p align = "center"><i>
-Patrón arquitectónico para microservicios con Lambda. Fuente: Amazon AWS. https://docs.aws.amazon.com/whitepapers/latest/serverless-multi-tier-architectures-api-gateway-lambda/microservices-with-lambda.html
-El patrón de arquitectura de microservicio no está vinculado a la arquitectura típica de tres capas (3 tiers); sin embargo, este patrón popular puede obtener importantes beneficios del uso de recursos sin servidor.</i></p><br>
+4.- Comenzarás ejecutando la línea de comandos que nos menciona la documentación, y veremos algo parecido:
 
-En esta arquitectura, cada uno de los componentes de la aplicación se desacopla y se implementa y opera de forma independiente. Una API creada con Amazon API Gateway y funciones ejecutadas posteriormente por AWS Lambda es todo lo que necesita para construir un microservicio. El equipo de desarrollo es libre de utilizar estos servicios para desacoplar y fragmentar su entorno al nivel de granularidad deseado.
+`docker pull`  
 
-En general, un entorno de microservicios puede presentar las siguientes dificultades: sobrecarga repetida para crear cada nuevo microservicio, problemas con la optimización de la densidad / utilización del servidor, complejidad de ejecutar múltiples versiones de múltiples microservicios simultáneamente y proliferación de requisitos de código del lado del cliente para integrar los servicios de forma separada.
+<pre><code>Using default tag: latest
+latest: Pulling from library/ubuntu
+7b1a6ab2e44d: Pull complete
+Digest: sha256:626ffe58f6e7566e00254b638eb7e0f3b11d4da9675088f4781a50ae288f3322
+Status: Downloaded newer image for ubuntu:latest
+docker.io/library/ubuntu:latest
 
-Cuando se crean microservicios utilizando recursos sin servidor, estos problemas se vuelven más fáciles de resolver y, en algunos casos, simplemente desaparecen. El patrón de microservicios sin servidor reduce la barrera para la creación de cada microservicio posterior (Amazon API Gateway incluso permite la clonación de API existentes y el uso de funciones Lambda en otras cuentas -tal y como se aprecia en la imagen-). La optimización de la utilización del servidor ya no es relevante con este patrón de arquitectura.
+</code></pre>
+
+5.- Valida las imágenes en local:
+
+`docker images`  
+
+<pre><code>REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       latest    ba6acccedd29   5 weeks ago   72.8MB
+</code></pre>
+
+
+6.- Inicia tu primer Contenedor con la imagen Ubuntu que descargamos a nuestro local:
+
+`docker run -it ubuntu bash`  
+
+<pre><code>root@8de88a3d3b85:/#
+</code></pre>
+
+7.- Vas a actualizar para tener nuestro Ubuntu al dia, ejecuta el siguiente comando, verás algo parecido como lo siguiente:
+
+`apt-get update`  
+
+<pre><code>root@8de88a3d3b85:/# apt-get update
+Get:1 http://security.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:2 http://archive.ubuntu.com/ubuntu focal InRelease [265 kB]
+Get:3 http://security.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [682 kB]
+Get:4 http://security.ubuntu.com/ubuntu focal-security/universe amd64 Packages [809 kB]
+Get:5 http://security.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [30.1 kB]
+Get:6 http://security.ubuntu.com/ubuntu focal-security/main amd64 Packages [1232 kB]
+Get:7 http://archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:8 http://archive.ubuntu.com/ubuntu focal-backports InRelease [101 kB]
+Get:9 http://archive.ubuntu.com/ubuntu focal/restricted amd64 Packages [33.4 kB]
+Get:10 http://archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [177 kB]
+Get:11 http://archive.ubuntu.com/ubuntu focal/universe amd64 Packages [11.3 MB]
+Get:12 http://archive.ubuntu.com/ubuntu focal/main amd64 Packages [1275 kB]
+Get:13 http://archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [738 kB]
+Get:14 http://archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [33.3 kB]
+Get:15 http://archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1098 kB]
+Get:16 http://archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [1689 kB]
+Get:17 http://archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [7185 B]
+Get:18 http://archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [2668 B]
+Fetched 19.7 MB in 4s (4626 kB/s)
+Reading package lists... Done
+</code></pre>
+
+8.- Abrirás otra terminal y ejecutamos el siguiente comando, donde podrás ver algo parecido:
+`docker ps`  
+
+<pre><code>CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS         PORTS     NAMES
+dfd2cfa94c57   ubuntu    "bash"    5 minutes ago   Up 5 minutes             charming_hamilton
+</code></pre>
+
+Podrás ver las características del Contenedor que se tienen en ejecución.
+
+9.- Copia tu Container ID, en este ejemplo es el dfd2cfa94c57 y deberás ejecutar la siguiente sentencia, donde ubuntu-update es el nombre que le darás a tu imagen Docker:
+
+
+`docker commit dfd2cfa94c57 ubuntu-update`  
+
+
+10.- Valida tu primer imagen Docker creada, a partir de una Imagen Docker existente:
+
+`docker images`  
+
+<pre><code>docker images
+REPOSITORY      TAG       IMAGE ID       CREATED          SIZE
+ubuntu-update   latest    31889a5b4786   14 seconds ago   104MB
+ubuntu          latest    ba6acccedd29   5 weeks ago      72.8MB
+</code></pre>
+
+11.- Podrás ver que el tamaño de nuestra imagen ha incrementado, esto debido a los paquetes que instalamos al ejecutar 
+
+
+`apt-get update`  

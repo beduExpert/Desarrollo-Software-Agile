@@ -11,7 +11,7 @@ RUN apt-get update -qq && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable" && \
     apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
     apt-get update -qq && \
-    apt-get install -qqy docker-ce terraform python3-distutils wget && \
+    apt-get install -qqy docker-ce terraform && \
     usermod -aG docker jenkins && \
     chown -R jenkins:jenkins $JENKINS_HOME/ && \
     touch /var/run/docker.sock && \
@@ -19,12 +19,5 @@ RUN apt-get update -qq && \
     chmod 666 /var/run/docker.sock
 
 USER jenkins
-
-RUN cd $JENKINS_HOME && \
-    wget https://bootstrap.pypa.io/get-pip.py && \
-    python3 get-pip.py && \
-    python3 -m pip install requests && \
-    python3 -m pip list && \
-    whereis python3
 
 VOLUME [$JENKINS_HOME, "/var/run/docker.sock"]

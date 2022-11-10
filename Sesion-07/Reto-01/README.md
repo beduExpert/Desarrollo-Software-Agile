@@ -1,13 +1,20 @@
-# Reto 1 - Crea tu propio dashboard en Grafana
+# Reto 1 - Crea tu propio código Groovy
+
 ## Objetivo
 
-Ejecutar comandos Docker en consola, comprobar con ambiente gráfico y su usabilidad con Grafana
+* Comprensión de código Groovy
+* Comprensión de orden de stages
 
 ## Desarrollo
 
-1. Crea un nuevo dashboard genérico
+Crea un pipeline llamado "devops-fundamentals" en el que puedas escribir un código en groovy con las siguientes características:
 
-2. Nombralo "My first Dashboard"
+* Que sea capaz de conectarse a cualquier nodo
+* Debe contener 3 stages (Docker, Build y DevOps Config)
+* Los 3 stages deben tener un echo que muestre en consola para qué sirve cada uno.
+* El stage DevOps Config debe nombrar y asignar variables de usuario tu nombre y contraseña "devops"
+* El stage DevOps Config debe mostrar en consola tu usuario y contraseña
+
 
 ## Resultado
 > 💡 [Propuesta solución](./psolv.md).
