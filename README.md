@@ -21,7 +21,7 @@ La capacidad de migrar habilidades de negocios de manera continua se ha converti
 
 - Sesión 01: Agilidad
 - Sesión 02: Fundamentos de Scrum
-- [`Sesión 03:` Niveles de software testing](./Sesion-03)
+- Sesión 03: Niveles de software testing
 - [`Sesión 04:` Fundamentos de DevSecOps](./Sesion-04)
 - [`Sesión 05:` Flujos de DevSecOps y manejo de código](./Sesion-05)
 - [`Sesión 06:` Operaciones de Infraestructura como código (ansible, terraform y packer](./Sesion-06)
