@@ -42,9 +42,9 @@ Para este ejemplo tenemos un microservicio demo, y un proyecto de Terraform que 
 - [**`EJEMPLO 2`**](./Ejemplo-02/README.md)
 ---
 
-### 3) Operaciones con básicas con Terraform
+### 3) Operaciones con básicas con terraform. (Ejemplo 2)
 
-### `init`
+#### `init`
 
 Durante init, tf procesa el bloque terraform para inicializar la carpeta de trabajo, descarga los archivos de programa para todos los proveedores que utiliza el módulo. Un proyecto puede tener varios proveedores al mismo tiempo, por ejemplo, Docker, Kubernetes, PostgreSQL, AWS, Google Cloud, etc. Usualmente un proveedor solo crea los recursos de su servicio o producto, entonces los proyectos suelen tener varios proveedores. TF soporta proyectos de nube híbrida, manejando recursos de varios proveedores, enviando o intercambiando información entre ellos.
 
@@ -101,7 +101,7 @@ Mode                 LastWriteTime         Length Name
 
 Algunos proveedores como el de AWS pueden ser muy extensos. Realiza el [Reto 1](./Reto-01/README.md).
 
-### `apply`
+#### `apply`
 
 Esta operación es para aplicar los comandos necesarios para llegar a nuestra infraestructura objetivo. Primeramente tf checará si ya tiene recursos en su archivo de estado, si los hay compara lo que tiene guardado con lo que está en el proveedor, si detecta diferencias crea un plan de acción, que son una serie de cambios necesarios para llegar al nuevo objetivo. Nos muesta ese plan y pide aprovación para ejecutarlo.
 
@@ -153,7 +153,7 @@ docker_container.nginx: Creation complete after 1s [id=0729c8ed849f6554f3895d604
 
 Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 ```
-### `destroy`
+#### `destroy`
 
 Esta operación es para aplicar los comandos necesarios para borrar (destruir) los recursos creados por nuestro proyecto. Este comando se basa en el archivo de estado para listar que recursos eliminar. Si un recurso no se encuentra en el archivo estado, terraform no lo borra.
 
@@ -209,7 +209,7 @@ Destroy complete! Resources: 2 destroyed.
 > ⚠️ En una situación real, es muy importante revisar todo el plan de acciones, ya que cualquer error puede causar problemas en nuestras aplicaciones. Por lo que `--auto-approve` solo es recomendado para automatización y cuando donde se sabe exactamente lo que se está haciendo, ya sea por que se realizó una revision previa, o por que se esta siguiendo un plan aprovado.
 ---
 
-### 4) Realizar llamadas al microservicio
+#### 4) Realizar llamadas al microservicio (Ejemplo 2)
 
 Existen muchas formas de probar tu contenedor, usando docker para abrir en el navegador, usando Postman, curl, etc.
 
@@ -222,3 +222,61 @@ Si das click en el nombre del microservicio podrás ver una ventana los `logs` d
 
 <img src="../assets/microservicio-log.png">
 
+### 5) Ejemplo proyecto terraform con AWS. (Ejemplo 3)
+
+Para este ejemplo tenemos un servidor demo, y un proyecto de Terraform que construye una red y se aprovisiona
+un servidor virtual con Ubuntu server.
+
+- [**`EJEMPLO 3`**](./Ejemplo-03/README.md)
+---
+
+### 6) Operaciones con básicas con terraform. (Ejemplo 3)
+
+#### `init`
+
+Usamos el comando init para inicializar el proyecto:
+
+```shell
+$ terraform init
+```
+
+Note que se instalan los plugins para el proveedor de aws.
+
+#### `validate`
+
+Antes de poder aplicar esta automatización, debemos asegurarnos que el código es conforme a las
+mejores prácticas y debemos realizar una planeación para validar la correcta configuración.
+
+Usamos el comando `validate`:
+
+```shell
+$ terraform validate
+```
+
+Si no tenemos problemas con sintaxis, realizamos la planeación:
+
+```shell
+$ terraform plan
+```
+
+Al final nos imprime la salida de los datos del cluster.
+
+#### `apply`
+
+Después de que se realizaron las validaciones y la planificación se debe aplicar con el comando:
+
+```shell
+terraform apply
+```
+
+Al final nos imprime la salida de los datos del cluster.
+
+**NOTA:** Estas son variables para la conexión al proveedor aws, se deben usar tanto para plan, apply y destroy.
+
+#### `clean`
+
+Para limpiar o destruir los recursos que se generaron ejecutar:
+
+```shell
+terraform destroy
+```

@@ -131,45 +131,6 @@ instance_type = "t2.micro"
 
 Aquí se definen los valores para las variables que usamos.
 
-## Inicializando la configuración
-
-Usamos el comando init para inicializar el proyecto:
-
-```shell
-$ terraform init
-```
-
-Note que se instalan los plugins para el proveedor de aws.
-
-## Validando la configuración
-
-Antes de poder aplicar esta automatización, debemos asegurarnos que el código es conforme a las
-mejores prácticas y debemos realizar una planeación para validar la correcta configuración.
-
-Usamos el comando `validate`:
-
-```shell
-$ terraform validate
-```
-
-Si no tenemos problemas con sintaxis, realizamos la planeación:
-
-```shell
-$ terraform plan
-```
-
-Al final nos imprime la salida de los datos del cluster.
-
-## Desplegando lo recursos
-
-Después de que se realizaron las validaciones y la planificación se debe aplicar con el comando:
-
-```shell
-$ terraform apply
-```
-
-Al final nos imprime la salida de los datos del cluster.
-
 ## Manejo de parámetros en tiempo de ejecución
 
 Para definir variables en tiempo de ejecución se usa:
@@ -179,11 +140,3 @@ $ terraform plan -var="access_key=Acc3ssk3Y===++" -var="secret_key=s3cr3tkEy---=
 ```
 
 **NOTA:** Estas son variables para la conexión al proveedor aws, se deben usar tanto para plan, apply y destroy.
-
-## Limpieza
-
-Para limpiar o destruir los recursos que se generaron ejecutar:
-
-```shell
-$ terraform destroy
-```
