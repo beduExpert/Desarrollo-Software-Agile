@@ -76,7 +76,7 @@ En el recurso `aws_vpc` se define la red principal, y algunos de sus parámetros
 
 Y finalmente definimos un recurso EC2:
 
-```hcl
+```terraform
 resource "aws_instance" "ec2_instance" {
   ami           = var.ami_id
   instance_type = var.instance_type
@@ -90,8 +90,32 @@ resource "aws_instance" "ec2_instance" {
 Este recurso es una máquina virtual de tipo `t2-micro` que entra en el tier gratuito, esta máquina
 esta asociada a la subred arriba creada.
 
-En **tf** existen más tipos de bloques que no utilizaremos en este ejemplo, como `variable`, `data`,
-`module` etc.
+En el archivo `variables` se deben declarar las variables que se usarán:
+
+```terraform
+variable "region" {
+  description = "Location for cloud resources"
+}
+
+variable "access_key" {
+  description = "Access key to AWS console"
+}
+
+variable "secret_key" {
+  description = "Secret key to AWS console"
+}
+
+variable "ami_id" {
+  description = "The AMI to use"
+  default     = "ami-09d56f8956ab235b3"
+}
+
+variable "instance_type" {
+  default = "t2.micro"
+}
+```
+
+En **tf** existen más tipos de bloques que no utilizaremos en este ejemplo, como `data`, `module` etc.
 
 ## Configuración de variables local
 
@@ -160,6 +184,6 @@ $ terraform plan -var="access_key=Acc3ssk3Y===++" -var="secret_key=s3cr3tkEy---=
 
 Para limpiar o destruir los recursos que se generaron ejecutar:
 
-``` shell
+```shell
 $ terraform destroy
 ```
