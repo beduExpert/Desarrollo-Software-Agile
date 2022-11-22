@@ -10,9 +10,7 @@
 
 ### 2. Contenido :blue_book:
 
-Se presenta la simulación de un caso en el que el desarrollador de Java que usa Maven y es nuevo en los conceptos de CI/CD, o si está familiarizado con estos conceptos pero no sabe cómo implementar la creación de su aplicación usando Jenkins, requiere que los cambios que realice sean fluidos y no deba preocuparse por que su código funcione en cualquier equipo.
-
-La aplicación Java simple (que obtendrá de un repositorio de muestra en GitHub) genera la cadena "¡Hola mundo!" y se acompaña de un par de pruebas unitarias para comprobar que la aplicación principal funciona como se esperaba. Los resultados de estas pruebas se guardan en una carpeta local que simularemos como nuestro Deploy.
+Se presenta la simulación de un caso en el que el desarrollador de Python que usa Flask y es nuevo en los conceptos de CI/CD, o si está familiarizado con estos conceptos pero no sabe cómo implementar la creación de su aplicación usando Jenkins, requiere que los cambios que realice sean fluidos y no deba preocuparse por que su código funcione en cualquier equipo.
 
 ---
 
