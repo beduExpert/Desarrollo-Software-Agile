@@ -1,11 +1,11 @@
-## Sesión 8: DevOps en la práctica 🤖
+## Sesión 8: Jenkins y Testing 🤖
 
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart: 
 
-- Conocer a profundidad los contenedores con Docker
+- Configurar Pipelines declarativos
 - Configuración de herramientas de Test y Seguridad
 
 ### 2. Contenido :blue_book:
@@ -20,17 +20,17 @@ Por otra parte, dentro del flujo de integración es importante utilizar una plat
 
 #### <ins>Tema 1</ins>
 
-Se detallan los comandos necesarios para poder navegar en un contenedor de imágenes que previamente fueron construidas dentro del flujo de Integración Contínua.
+Se configuran Pipelines declarativos basados en Git en Jenkins para automatizar las pruebas de el proyecto.
 
 - [**`EJEMPLO 1`**](./Ejemplo-01)
-- [**`RETO 1`**](./Reto-01)
+
 ---
 
 <img src="images/structure.png" align="right" height="90"> 
 
 #### <ins>Tema 2</ins>
 
-Después de haber conocido la fuerza que ocupa Jenkins como orquestador dentro del flujo DevOps, es importante integrar herramientas de seguridad de código para que entre muchas otras cosas, la experiencia del cliente sea fiel.
+Instalamos el servicio SonarQube para hacer pruebas de análisis de código estático del código de tu aplicación.
 
 - [**`EJEMPLO 2`**](./Ejemplo-02)
 
@@ -40,16 +40,20 @@ Después de haber conocido la fuerza que ocupa Jenkins como orquestador dentro d
 
 #### <ins>Tema 3</ins>
 
-Prueba de rendimiento para medir el rendimiento de la aplicación. También puede comparar el rendimiento de la aplicación con una prueba comparativa de rendimiento de línea base como, por ejemplo, los resultados de la última confirmación en la versión principal o en la versión actual.
+Integraremos pruebas de seguridad en el código a través de análisis estático. Integramos SonarQube con Jenkins para hacer los tests desde el Pipeline.
 
-- [**`RETO 1`**](./Reto-01)
+- [**`EJEMPLO 3`**](./Ejemplo-03)
+
 ---
 
 <img src="images/chaomi.png" align="right" height="110"> 
 
 #### <ins>Tema 4</ins>
 
-Unificar los temas vistos hasta el momento. Considerando el pilar fundamental sobre el que se basa el sistema de trabajo es la automatización de todos los procesos que intervienen en el ciclo de vida de una aplicación: integración, pruebas, despliegue, monitorización y operación.
+Integramos pruebas de vulnerabildades en el código de la aplicación usando OWASP ZAP. El cual analiza las dependencias de las aplicaciones
+para detectar vulnerabilidades que pongan en riesgo la aplicación.
+
+- [**`EJEMPLO 4`**](./Ejemplo-04)
 
 ---
 
