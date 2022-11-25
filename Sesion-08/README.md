@@ -1,11 +1,11 @@
-## Sesión 8: Jenkins y Testing 🤖
+## Sesión 8: CI/CD con Jenkins / testing 🤖
 
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 <div style="text-align: justify;">
 
 ### 1. Objetivos :dart: 
 
-- Configurar Pipelines declarativos
+- Configurar Pipelines de CI/CD con Jenkins
 - Configuración de herramientas de Test y Seguridad
 
 ### 2. Contenido :blue_book:
@@ -62,9 +62,3 @@ para detectar vulnerabilidades que pongan en riesgo la aplicación.
 Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
 
 - [**`POSTWORK SESIÓN 1`**](./Postwork/)
-
-<br/>
-
-
-</div>
-
