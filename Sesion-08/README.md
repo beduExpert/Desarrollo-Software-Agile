@@ -1,8 +1,5 @@
 ## Sesión 8: CI/CD con Jenkins / testing 🤖
 
-<img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
-<div style="text-align: justify;">
-
 ### 1. Objetivos :dart: 
 
 - Configurar Pipelines de CI/CD con Jenkins
@@ -16,9 +13,7 @@ Por otra parte, dentro del flujo de integración es importante utilizar una plat
 
 ---
 
-<img src="images/tools.png" align="right" height="90"> 
-
-#### <ins>Tema 1</ins>
+#### Tema 1
 
 Se configuran Pipelines declarativos basados en Git en Jenkins para automatizar las pruebas de el proyecto.
 
@@ -26,9 +21,7 @@ Se configuran Pipelines declarativos basados en Git en Jenkins para automatizar 
 
 ---
 
-<img src="images/structure.png" align="right" height="90"> 
-
-#### <ins>Tema 2</ins>
+#### Tema 2
 
 Instalamos el servicio SonarQube para hacer pruebas de análisis de código estático del código de tu aplicación.
 
@@ -36,9 +29,7 @@ Instalamos el servicio SonarQube para hacer pruebas de análisis de código est�
 
 ---
 
-<img src="images/emulator.jpg" align="right" height="90"> 
-
-#### <ins>Tema 3</ins>
+#### Tema 3
 
 Integraremos pruebas de seguridad en el código a través de análisis estático. Integramos SonarQube con Jenkins para hacer los tests desde el Pipeline.
 
@@ -46,9 +37,7 @@ Integraremos pruebas de seguridad en el código a través de análisis estático
 
 ---
 
-<img src="images/chaomi.png" align="right" height="110"> 
-
-#### <ins>Tema 4</ins>
+#### Tema 4
 
 Integramos pruebas de vulnerabildades en el código de la aplicación usando OWASP ZAP. El cual analiza las dependencias de las aplicaciones
 para detectar vulnerabilidades que pongan en riesgo la aplicación.
@@ -57,7 +46,7 @@ para detectar vulnerabilidades que pongan en riesgo la aplicación.
 
 ---
 
-### 3. Postwork :memo:
+### 3. Postwork
 
 Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
 
