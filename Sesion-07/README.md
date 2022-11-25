@@ -1,4 +1,4 @@
-## Sesión 6: CI/CD con Jenkins y Groovy 🤖
+## Sesión 8: CI/CD con Jenkins / testing
 
 <img src="../images/android-kotlin.png" align="right" height="120" hspace="10">
 <div style="text-align: justify;">
