@@ -15,7 +15,7 @@ Por otra parte, dentro del flujo de integración es importante utilizar una plat
 
 #### Tema 1
 
-Se configuran Pipelines declarativos basados en Git en Jenkins para automatizar las pruebas de el proyecto.
+Se configuran Pipelines declarativos basados en SCM Git en Jenkins para automatizar las pruebas del proyecto.
 
 - [**`EJEMPLO 1`**](./Ejemplo-01)
 

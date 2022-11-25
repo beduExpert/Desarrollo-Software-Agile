@@ -12,11 +12,21 @@ Aquí se describen las actividades que se realizan en el servicio SonarQube:
 
 En el navegador abrimos el siguiente URL: `http://localhost:9000/`
 
+Usamos las credenciales del usuario admin para iniciar sesión.
+
+![Alt text](..//Ejemplo-03/assets/sonarqube-console.png?raw=true "SonarQube Console")
+
 2. Crear token de acceso para conectar jenkins
+
+Vamos al menú `Administration`, luego a `Security`, y en `Users`:
+
+![Alt text](..//Ejemplo-03/assets/sonarqube-admin-security-users.png?raw=true "SonarQube Admin Security Users")
 
 Vamos al menú `Administration`, luego a `Users` y luego en la cuenta de `Administrator` se da clic en el botón de `Update Tokens`.
 
 Se asigna el nombre del token `jenkins` y se configura sin fecha de expiración.
+
+![Alt text](..//Ejemplo-03/assets/sonarqube-admin-token.png?raw=true "SonarQube Admin Token")
 
 Se copia el token ya que se va a usar adelante.
 
