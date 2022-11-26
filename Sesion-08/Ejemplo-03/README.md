@@ -103,7 +103,7 @@ de `sonarqube server`.
 
 7. Crear archivo de configuración de Sonar en repositorio aplicación
 
-En la raíz del repositorio configuramos los parámetros para SonarQube Scanner:
+En la raíz del repositorio configuramos el archivo `sonar-project.properties` con los parámetros para SonarQube Scanner:
 
 ```
 # Comma-separated paths to directories with sources (required)
