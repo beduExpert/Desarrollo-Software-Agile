@@ -31,7 +31,8 @@ Instalamos el servicio SonarQube para hacer pruebas de análisis de código est�
 
 #### Tema 3
 
-Integraremos pruebas de seguridad en el código a través de análisis estático. Integramos SonarQube con Jenkins para hacer los tests desde el Pipeline.
+Integraremos pruebas de seguridad en el código a través de análisis estático. Integramos SonarQube con Jenkins para
+hacer los tests desde el Pipeline.
 
 - [**`EJEMPLO 3`**](./Ejemplo-03)
 
@@ -39,8 +40,8 @@ Integraremos pruebas de seguridad en el código a través de análisis estático
 
 #### Tema 4
 
-Integramos pruebas de vulnerabildades en el código de la aplicación usando OWASP ZAP. El cual analiza las dependencias de las aplicaciones
-para detectar vulnerabilidades que pongan en riesgo la aplicación.
+Integramos pruebas de vulnerabilidades en el código de la aplicación usando OWASP dependency checks. El cual analiza
+las dependencias de las aplicaciones para detectar vulnerabilidades que pongan en riesgo la aplicación.
 
 - [**`EJEMPLO 4`**](./Ejemplo-04)
 
@@ -51,3 +52,7 @@ para detectar vulnerabilidades que pongan en riesgo la aplicación.
 Encuentra las indicaciones y consejos para reflejar los avances de tu proyecto de este módulo.
 
 - [**`POSTWORK SESIÓN 1`**](./Postwork/)
+
+En el directorio de postwork encontrarás el código de ejemplo de una aplicación escrita en Java y que usa maven
+para la construcción y pruebas. El código esta en el directorio `pet-clinic`.
+
